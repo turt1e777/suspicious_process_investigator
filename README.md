@@ -27,17 +27,6 @@ It enriches local process data with hashing, parent/child relationships, network
 
 ---
 
-## 🚀 Installation 
-
-Clone the repository:
-
-```bash
-git clone https://github.com/turt1e777/suspicious-process-investigator.git
-cd suspicious-process-investigator
-```
-
----
-
 ### ▶️ Usage
 
 Run the script from an elevated PowerShell session:
