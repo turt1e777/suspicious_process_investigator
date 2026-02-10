@@ -35,4 +35,72 @@ Clone the repository:
 git clone https://github.com/turt1e777/suspicious-process-investigator.git
 cd suspicious-process-investigator
 
+---
 
+## ▶️ Usage
+
+Run the script from an elevated PowerShell session:
+
+.\SuspiciousProcessInvestigator.ps1
+
+
+When prompted, enter the name of the suspicious process:
+
+Enter the suspicious process name: powershell
+
+🧪 VirusTotal Integration (Optional)
+
+This tool supports VirusTotal hash lookups using the VirusTotal v3 API.
+
+1️⃣ Set your API key as an environment variable
+
+Persistent (recommended):
+
+setx VT_API_KEY "YOUR_VIRUSTOTAL_API_KEY"
+
+
+Restart PowerShell after setting the variable.
+
+Temporary (current session only):
+
+$env:VT_API_KEY = "YOUR_VIRUSTOTAL_API_KEY"
+
+2️⃣ The script will automatically detect and use the key
+
+If the key is not set, VirusTotal lookups are skipped safely.
+
+🔐 Security Notes
+
+❌ Do NOT hardcode API keys in the script
+
+✅ Environment variables keep secrets out of source control
+
+⚠️ VirusTotal public API keys are rate-limited
+
+
+
+
+🧠 Use Cases
+
+SOC alert triage
+
+Suspicious process validation
+
+Malware analysis labs
+
+Endpoint threat hunting
+
+Training & purple team exercises
+
+
+
+
+🛣️ Roadmap
+
+Planned enhancements:
+- JSON/CSV export for Splunk / Microsoft Sentinel
+- Option to kill the process after initial investigation
+
+✍️ Author
+turt1e
+Built for defenders, responders, and learners.
