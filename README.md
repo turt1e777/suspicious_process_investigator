@@ -32,7 +32,7 @@ It enriches local process data with hashing, parent/child relationships, network
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/suspicious-process-investigator.git
+git clone https://github.com/turt1e777/suspicious-process-investigator.git
 cd suspicious-process-investigator
 
 
