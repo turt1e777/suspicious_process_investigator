@@ -24,7 +24,7 @@ if (-not $processes) {
     exit
 }
 
-# --- VirusTotal Function to query API ---
+# --- VirusTotal function to query API ---
 function Get-VirusTotalHashReport {
     param (
         [Parameter(Mandatory)]
@@ -62,11 +62,12 @@ function Get-VirusTotalHashReport {
     }
 }
 
+# --- Retrieve process information & network connections ---
+
 foreach ($proc in $processes) {
 
     Write-Host "`n--- Process Information ---" -ForegroundColor Yellow
 
-# --- Retrieve process information & network connections ---
     $procInfo = Get-CimInstance Win32_Process -Filter "ProcessId = $($proc.Id)"
 
     $parentProc = Get-CimInstance Win32_Process -Filter "ProcessId = $($procInfo.ParentProcessId)"
@@ -79,7 +80,7 @@ foreach ($proc in $processes) {
         $_.OwningProcess -eq $proc.Id
     }
 
-# --- Retrieve file hash for target process and perform VirusTotal Hash Lookup ---
+# --- Retrieve file hash for target process and perform VirusTotal hash lookup ---
     $sha256Hash = "N/A"
     $vtResult = @{ VT_Status = "Not performed" }
 
