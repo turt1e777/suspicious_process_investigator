@@ -1,4 +1,4 @@
-# Suspicious Process Investigator
+# Suspicious Process Investigator by turt1e
 
 **Suspicious Process Investigator** is a PowerShell-based incident response tool designed to help security analysts/incident responders quickly triage and investigate suspicious processes on Windows systems.
 
@@ -8,7 +8,7 @@ It enriches local process data with hashing, parent/child relationships, network
 
 ## ✨ Features
 
-- 🔍 Interactive process investigation by name
+- 🔍 Interactive process investigation
 - 🧬 Parent and child process enumeration
 - 🌐 Active TCP network connection discovery
 - 🔐 SHA256 file hash calculation
@@ -27,80 +27,78 @@ It enriches local process data with hashing, parent/child relationships, network
 
 ---
 
-## 🚀 Installation
+## 🚀 Installation 
 
 Clone the repository:
 
 ```bash
 git clone https://github.com/turt1e777/suspicious-process-investigator.git
 cd suspicious-process-investigator
+```
 
 ---
 
-## ▶️ Usage
+### ▶️ Usage
 
 Run the script from an elevated PowerShell session:
 
+```powershell
 .\SuspiciousProcessInvestigator.ps1
-
+```
 
 When prompted, enter the name of the suspicious process:
+```powershell
+Enter the suspicious process name: maliciousprocessexample
+```
 
-Enter the suspicious process name: powershell
+---
 
-🧪 VirusTotal Integration (Optional)
+### 🧪 VirusTotal Integration (Optional)
 
-This tool supports VirusTotal hash lookups using the VirusTotal v3 API.
+This tool supports VirusTotal hash lookups using the VirusTotal API.
 
 1️⃣ Set your API key as an environment variable
 
 Persistent (recommended):
-
+```powershell
 setx VT_API_KEY "YOUR_VIRUSTOTAL_API_KEY"
-
-
+```
 Restart PowerShell after setting the variable.
 
-Temporary (current session only):
 
+
+
+
+Temporary (current session only):
+```powershell
 $env:VT_API_KEY = "YOUR_VIRUSTOTAL_API_KEY"
+```
 
 2️⃣ The script will automatically detect and use the key
 
 If the key is not set, VirusTotal lookups are skipped safely.
 
-🔐 Security Notes
+---
 
-❌ Do NOT hardcode API keys in the script
+### 🔐 Security Notes
+- Do NOT hardcode API keys in the script
+- Environment variables keep secrets out of source control
+- VirusTotal public API keys are rate-limited
 
-✅ Environment variables keep secrets out of source control
+---
 
-⚠️ VirusTotal public API keys are rate-limited
+### 🧠 Use Cases
+- SOC alert triage
+- Suspicious process validation
+- Malware analysis lab enivronments
+- Training & purple team exercises
 
+---
 
-
-
-🧠 Use Cases
-
-SOC alert triage
-
-Suspicious process validation
-
-Malware analysis labs
-
-Endpoint threat hunting
-
-Training & purple team exercises
-
-
-
-
-🛣️ Roadmap
+### 🛣️ Roadmap
 
 Planned enhancements:
 - JSON/CSV export for Splunk / Microsoft Sentinel
 - Option to kill the process after initial investigation
 
-✍️ Author
-turt1e
-Built for defenders, responders, and learners.
+---
